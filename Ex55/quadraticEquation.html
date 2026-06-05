@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function solve()
+        {
+            var a = parseFloat(myform.a.value)
+            var b = parseFloat(myform.b.value)
+            var c = parseFloat(myform.c.value)
+            var d = Math.pow(b,2) - 4*a*c
+            if (d<0)
+                myform.result.value = "No solution"
+            else if (d==0)
+                myform.result.value = "x = " + (-b/(2*a))
+            else
+                myform.result.value = "x1 = " + ((-b+Math.sqrt(d))/(2*a)) + 
+                    "; x2 = " + ((-b-Math.sqrt(d))/(2*a))
+        }
+    </script>
+</head>
+<body>
+    <form name = "myform">
+        <table>
+            <caption>The Quadratic Equation</caption>
+            <tr>
+                <td>a: </td>
+                <td><input type="text" name="a"></td>
+            </tr>
+            <tr>
+                <td>b: </td>
+                <td><input type="text" name="b"></td>
+            </tr>
+            <tr>
+                <td>c: </td>
+                <td><input type="text" name="c"></td>
+            </tr>
+            <tr>
+                <td>Result: </td>
+                <td><input type="text" name="result" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="button" onclick="solve()">Find Solution</button>
+                    <button type="reset" onclick="clear()">Clear</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
