@@ -11,13 +11,25 @@
             var b = parseFloat(myform.b.value)
             var c = parseFloat(myform.c.value)
             var d = Math.pow(b,2) - 4*a*c
-            if (d<0)
-                myform.result.value = "No solution"
-            else if (d==0)
-                myform.result.value = "x = " + (-b/(2*a))
+            if (a==0)
+                {
+                    if (b==0)
+                        {
+                            myform.result.value="Infinite Solution";
+                        }
+                    else 
+                        myform.result.value="x = " + (-c/b);
+                }               
             else
-                myform.result.value = "x1 = " + ((-b+Math.sqrt(d))/(2*a)) + 
-                    "; x2 = " + ((-b-Math.sqrt(d))/(2*a))
+            {
+                if (d<0)
+                    myform.result.value = "No solution"
+                else if (d==0)
+                    myform.result.value = "x = " + (-b/(2*a))
+                else
+                    myform.result.value = "x1 = " + ((-b+Math.sqrt(d))/(2*a)) + 
+                        "; x2 = " + ((-b-Math.sqrt(d))/(2*a))
+            }
         }
     </script>
 </head>
