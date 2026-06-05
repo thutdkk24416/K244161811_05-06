@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculateTotal()
+        {
+            var quantity1 = parseFloat(myform.quantity1.value)
+            var quantity2 = parseFloat(myform.quantity2.value)
+            var quantity3 = parseFloat(myform.quantity3.value)
+            var price1 = parseFloat(document.getElementById("price1").innerHTML)
+            var price2 = parseFloat(document.getElementById("price2").innerHTML)
+            var price3 = parseFloat(document.getElementById("price3").innerHTML)
+            var total1 = quantity1 * price1
+            var total2 = quantity2 * price2
+            var total3 = quantity3 * price3
+            
+            if (myform.quantity1.value <0)
+                alert("Quantity must be greater than or equal to 0")
+            else
+                total1 = 19.95*parseFloat(myform.quantity1.value)
+                myform.total1.value = total1.toFixed(2) + "$"
+            if (myform.quantity2.value <0)
+                alert("Quantity must be greater than or equal to 0")
+            else                
+                total2 = 29.95*parseFloat(myform.quantity2.value)
+                myform.total2.value = total2.toFixed(2) + "$"
+            if (myform.quantity3.value <0)
+                alert("Quantity must be greater than or equal to 0")
+            else
+                total3 = 39.95*parseFloat(myform.quantity3.value)
+                myform.total3.value = total3.toFixed(2) + "$"
+
+            var total = parseFloat(myform.total1.value) + parseFloat(myform.total2.value) + parseFloat(myform.total3.value)
+            myform.total.value = total.toFixed(2) + "$"
+        }
+
+    </script>
+</head>
+<body>
+    <form name = "myform">
+        <table>
+            <tr>
+                <th>Part Number</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Item Table</th>
+            </tr>
+            <tr>
+                <td>C112</td>
+                <td>Mouse</td>
+                <td id="price1">19.95$</td>
+                <td><input type="number" id="quantity1"></td>
+                <td><input type="text" id="total1" readonly></td>
+            </tr>
+            <tr>
+                <td>B124</td>
+                <td>Keyboard US</td>
+                <td id="price2">29.95$</td>
+                <td><input type="number" id="quantity2"></td>
+                <td><input type="text" id="total2" readonly></td>
+            </tr>
+            <tr>
+                <td>U125</td>
+                <td>USB KingMax</td>
+                <td id="price3">39.95$</td>
+                <td><input type="number" id="quantity3"></td>
+                <td><input type="text" id="total3" readonly></td>
+            </tr>
+        </table>
+        <hr/>
+        <p align="right">Total: <input type="text" name="total" readonly></p>
+        <p align="right"><button type="button" onclick="calculateTotal()">SUM</button></p>
+    </form>
+</body>
+</html>
