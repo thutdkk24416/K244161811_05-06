@@ -4,38 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        input[type="text"]
-        {
-            width: 100%;
-        }
-    </style>
     <script>
         function max()
         {
+            var a = parseFloat(myform.a.value)
+            var b = parseFloat(myform.b.value)
+            var c = parseFloat(myform.c.value)
             myform.result.value = Math.max(a,b,c)
         }
         function min()
         {
-            a = myform.a.value
-            b = myform.b.value
-            c = myform.c.value
+            var a = parseFloat(myform.a.value)
+            var b = parseFloat(myform.b.value)
+            var c = parseFloat(myform.c.value)
             myform.result.value = Math.min(a,b,c)
         }
         function sina()
         {
             a = myform.a.value
-            myform.result.value = Math.sin(a)
+            myform.result.value = Math.sin(a * Math.PI / 180)
         }
         function cosa()
         {
             a = myform.a.value
-            myform.result.value = Math.cos(a)
+            myform.result.value = Math.cos(a * Math.PI / 180)
         }
         function ab()
         {
-            a = myform.a.value
-            b = myform.b.value
+            var a = parseFloat(myform.a.value)
+            var b = parseFloat(myform.b.value)
             myform.result.value = Math.pow(a,b)
         }
     </script>
